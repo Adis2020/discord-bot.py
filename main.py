@@ -15,6 +15,7 @@ async def load():
             await bot.load_extension(f'cogs.{filename[:-3]}')
 
 
+
 @bot.event
 async def on_ready():
     await load()
