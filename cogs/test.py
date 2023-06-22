@@ -1,11 +1,6 @@
-import asyncio
+from dotenv import load_dotenv
+import os
 
-async def my_async_function():
-    for i in 'hello':
-        print(i)
-    print(2)
-    print(3)
-    print(4)
-    print("Асинхронная операция завершена")
+load_dotenv()
 
-asyncio.run(my_async_function())
+print(os.getenv('TOKEN'))
