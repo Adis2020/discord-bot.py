@@ -18,7 +18,6 @@ class AdminCommands(commands.Cog):
     async def removeRole(self, ctx, member: discord.Member, *, role: discord.Role):
         await member.remove_roles(role)
         await ctx.send(f"Роль '{role.name}' успешно удалена у пользователя '{member.display_name}'.")
-        await ctx.send("Произошла ошибка при удалении роли. Пожалуйста, убедитесь, что у бота есть соответствующие права.")
 
 
 async def setup(bot):
