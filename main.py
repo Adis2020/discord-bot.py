@@ -1,8 +1,11 @@
 import os
+from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='!', intents=discord.Intents.default())
+load_dotenv()
+
+bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 
 async def load():
@@ -15,7 +18,6 @@ async def load():
 @bot.event
 async def on_ready():
     await load()
-    print('Bot is ready.')
 
 
-bot.run('OTg4MzkzNjM2MTA4NTc0NzQw.GcM70T.4PD_N4yOwzTW5tn12LGPGazSedaHiRFENNCZbs')
+bot.run(os.getenv('TOKEN'))
