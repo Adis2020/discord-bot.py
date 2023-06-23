@@ -8,15 +8,11 @@ with open('data/channelsId.json', 'r') as file:
     channel_id_rule = array_ch_id['RuleChId']
 
 
-
-
-
 class ServerTxt(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.rule = None
         self.channelIdRule = int(channel_id_rule)
-        self.rule = open_file.start()
 
     @commands.command()
     async def sendRule(self, ctx):
