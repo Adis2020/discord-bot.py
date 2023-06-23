@@ -14,7 +14,7 @@ class sendServerTxts(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.rule = rule
-        self.channelIdRule = channel_id_rule
+        self.channelIdRule = int(channel_id_rule)
 
     @commands.command()
     async def sendRule(self, ctx):
