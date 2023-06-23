@@ -1,4 +1,5 @@
 import os
+import asyncio
 from dotenv import load_dotenv
 import discord
 from discord.ext import commands
@@ -15,10 +16,16 @@ async def load():
             await bot.load_extension(f'cogs.{filename[:-3]}')
 
 
+async def main():
+    async with bot:
+        await load()
+        await test()
+        await bot.start(os.getenv('TOKEN'))
+
 
 @bot.event
 async def on_ready():
-    await load()
+    print('bot is ready')
 
 
-bot.run(os.getenv('TOKEN'))
+asyncio.run(main())
