@@ -19,7 +19,6 @@ async def load():
 async def main():
     async with bot:
         await load()
-        await test()
         await bot.start(os.getenv('TOKEN'))
 
 
